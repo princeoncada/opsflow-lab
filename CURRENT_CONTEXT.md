@@ -1,67 +1,42 @@
-﻿# Current Context
+# Current Context
+
+Last updated: 2026-06-20
 
 OpsFlow Lab is Prince's public frontend portfolio project.
 
-## Project Identity
-
-OpsFlow Lab is a hyperfast, motion-rich frontend systems lab inspired by McMaster-Carr-style speed and React Bits-level visual polish.
-
 ## Current Phase
 
-Phase: Architecture and foundation lock.
+Architecture and foundation lock.
 
-## Official Timeline
+## Current Target
 
-- MVP: 6 weeks
-- Portfolio v1: 12 weeks
-- Portfolio v2 stretch: 16 weeks
+Finish documentation governance cleanup, then verify the app locally before starting app shell implementation.
 
-## Daily Capacity
+## Last Known State
 
-Prince expects to vibe code for 2–3 hours per day.
+- Public repo exists at `princeoncada/opsflow-lab`.
+- Next.js app has been initialized.
+- shadcn/ui has been initialized.
+- Runtime and dev tooling dependencies have been installed.
+- Baseline documentation structure exists.
+- Documentation source-of-truth routing has been introduced in `PROJECT_INSTRUCTIONS.md`.
+- The visible app is still mostly starter Next.js content.
+- `README.md` is still the starter Next.js README.
 
-Planning assumption: 12–15 productive hours per week.
+## Active Blockers
 
-## Locked Core Stack
+- Local verification still needs to run through Prince's local environment.
+- App shell foundation should wait until docs governance is stable.
+- Public README still needs to be rewritten before the repo is portfolio-ready.
 
-- Next.js App Router
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- Radix primitives
-- Motion
-- React Bits
-- Motion Primitives
-- Kokonut UI selectively
-- Zustand
-- Dexie
-- Zod
-- React Hook Form
-- MSW
-- TanStack Table
-- TanStack Virtual
-- Recharts or Visx
-- React Flow
-- Vitest
-- Playwright
+## Active References
 
-## Deferred
-
-- Supabase
-- tRPC
-- Redis
-- Auth
-- Real backend
-- Realtime backend
-- AI backend
-
-## Current Priority
-
-1. Lock repo and instructions.
-2. Initialize project foundation.
-3. Create documentation structure.
-4. Establish Git workflow.
-5. Start app shell only after docs and architecture are committed.
+- Operating rules: `PROJECT_INSTRUCTIONS.md`
+- Latest handoff: `docs/handoffs/latest.md`
+- Architecture and stack: `docs/architecture.md`
+- Scope and modules: `docs/scope.md`
+- Timeline and capacity: `docs/timeline.md`
+- Git workflow: `docs/git-workflow.md`
 
 ## Current Repo Notes
 
@@ -69,3 +44,7 @@ Planning assumption: 12–15 productive hours per week.
 - Current branch: master.
 - ChatGPT is the only AI coding partner for this project.
 - VS Code is the local editing environment.
+
+## Do Not Duplicate Here
+
+This file is a live-state snapshot only. Do not duplicate the full stack, timeline, product scope, architecture rules, or workflow rules here. Route to the canonical files listed in `PROJECT_INSTRUCTIONS.md` instead.
