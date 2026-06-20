@@ -1,147 +1,105 @@
-﻿# Project Instructions
+# Project Instructions
 
 You are operating inside Prince's `opsflow-lab` project.
 
 ## Core Identity
 
-OpsFlow Lab is a hyperfast, motion-rich frontend systems lab inspired by McMaster-Carr-style speed and React Bits-level visual polish.
+OpsFlow Lab is Prince's public frontend portfolio and engineering case study.
 
-This project is a public frontend portfolio and engineering case study. It should demonstrate aggressive caching, prefetching, local-first UX, dense navigation, workflow modeling, dashboard engineering, animation discipline, accessibility, and clean Git/documentation habits.
+For product identity, scope, architecture, timeline, and strategy details, do not duplicate content here. Follow the source-of-truth map below.
 
 ## Default Mode
 
 Act as Prince's frontend architecture, implementation, documentation, debugging, and Git workflow partner.
 
-This project uses ChatGPT + VS Code only.
+This project uses ChatGPT + VS Code + GitHub only.
 
 Do not assume Codex, Claude, Cursor agents, or other AI coding agents are involved.
 
-## Locked Architecture
-
-Core stack:
+## Canonical Repository
 
 ```text
-Next.js App Router
-TypeScript
-Tailwind CSS
-shadcn/ui
-Radix primitives
-Motion / Framer Motion through the `motion` package
-React Bits
-Motion Primitives
-Kokonut UI, selectively
-Zustand
-Dexie
-Zod
-React Hook Form
-MSW
-TanStack Table
-TanStack Virtual
-Recharts or Visx
-React Flow via @xyflow/react
-Vitest
-Playwright
-Storybook later
+Repository: https://github.com/princeoncada/opsflow-lab
+Repository full name: princeoncada/opsflow-lab
+Local project folder: opsflow-lab
+Package manager: npm
+Current branch: master
 ```
 
-Deferred unless approved through an ADR:
+## Documentation Source-of-Truth Rule
+
+Do not duplicate canonical project facts across docs.
+
+Each important fact should have exactly one canonical owner. When another file needs that context, reference the owner path instead of restating the full content.
+
+## Documentation Source-of-Truth Map
 
 ```text
-Supabase
-tRPC
-Redis
-Auth
-Database-backed user accounts
-Realtime backend
-AI backend
-Prisma
-GraphQL
-Redux
+Project operating rules: PROJECT_INSTRUCTIONS.md
+Current live state: CURRENT_CONTEXT.md
+Latest handoff: docs/handoffs/latest.md
+Architecture and stack: docs/architecture.md
+Product scope and modules: docs/scope.md
+Timeline and capacity: docs/timeline.md
+Performance strategy: docs/performance-strategy.md
+Caching strategy: docs/caching-strategy.md
+Animation strategy: docs/animation-strategy.md
+Design system rules: docs/design-system.md
+Git workflow: docs/git-workflow.md
+Minor decisions: docs/decision-log.md
+Major architecture decisions: docs/adr/
+ChatGPT UI bootstrap copy: docs/chatgpt-project-instructions.md
+Public project overview: README.md
 ```
 
-Architecture rule:
+## Reference Routing Rule
+
+When referencing another document, use explicit repo-relative paths.
+
+Good:
 
 ```text
-Static first.
-Client-fast second.
-Backend last.
+For stack decisions, see docs/architecture.md.
+For cache ownership, see docs/caching-strategy.md.
 ```
 
-## Product Scope
-
-Locked v1 modules:
+Avoid:
 
 ```text
-1. Landing / Portfolio Shell
-2. Hyper Catalog
-3. Process Simulator
-4. Workflow Builder
-5. Analytics Dashboard
-6. Design System Playground
-7. Case Studies
+As described elsewhere...
+See the architecture docs...
 ```
 
-MVP scope:
+## Reference Loop Prevention
+
+Docs may reference canonical owners, but canonical owners should not depend on volatile docs.
+
+Allowed direction:
 
 ```text
-Landing page
-Lab shell
-React Bits visual system
-Command palette
-Intent prefetching
-Hyper Catalog
-Dexie cache
-README
-Architecture docs
-One strong case study
+PROJECT_INSTRUCTIONS.md -> docs/*
+CURRENT_CONTEXT.md -> PROJECT_INSTRUCTIONS.md and docs/handoffs/latest.md
+CURRENT_CONTEXT.md -> stable strategy docs when needed
+docs/handoffs/latest.md -> CURRENT_CONTEXT.md and stable strategy docs
+strategy docs -> ADRs and decision log when needed
 ```
 
-Portfolio v1 scope:
+Not allowed:
 
 ```text
-MVP
-Process Simulator
-Workflow Builder
-Analytics Dashboard
-Design System Playground
-Multiple case studies
-Performance writeups
-Accessibility notes
-Clean public repo history
+docs/architecture.md requiring CURRENT_CONTEXT.md to be understood
+docs/scope.md requiring docs/handoffs/latest.md to be understood
+docs/timeline.md requiring CURRENT_CONTEXT.md to be understood
+ADRs depending on handoffs
+stable strategy docs depending on latest session state
 ```
 
-Portfolio v2 stretch:
+Mental model:
 
 ```text
-Service worker
-Cache visualization lab
-Storybook polish
-Playwright flows
-Advanced dashboard polish
-Possible Redis demo only through ADR
-Possible Supabase/tRPC only through ADR
-```
-
-## Timeline
-
-Official timeline:
-
-```text
-6-week MVP
-12-week Portfolio v1
-16-week Portfolio v2 stretch
-```
-
-Prince's expected daily build window:
-
-```text
-2–3 hours per day
-```
-
-Planning assumption:
-
-```text
-12–15 productive hours per week
+Stable docs can point sideways or down.
+Volatile docs can point to stable docs.
+Stable docs should not point to volatile docs.
 ```
 
 ## Repo Structure
@@ -199,103 +157,88 @@ Feature folder rule:
 A feature should be removable without breaking the rest of the app.
 ```
 
-## Design System Rules
+## Repository Access Authorization
 
-Hierarchy:
+Prince authorizes ChatGPT to use the available GitHub-connected tools for this project repository.
+
+When the GitHub connector is available, ChatGPT may directly read, search, inspect, create, update, and delete repository files in `princeoncada/opsflow-lab` as needed to support the project.
+
+This access is for project work only and should be used carefully.
+
+## Read Access
+
+ChatGPT should freely read project files when needed, especially during session startup, planning, debugging, review, and handoff.
+
+Default startup read order:
 
 ```text
-shadcn/ui = base component ownership
-Radix = accessibility primitive layer
-Tailwind tokens = visual source of truth
-Motion = animation engine
-React Bits = high-impact visual effects
-Motion Primitives = reusable animated interaction patterns
-Kokonut UI = selective inspiration/component source
+1. PROJECT_INSTRUCTIONS.md
+2. CURRENT_CONTEXT.md
+3. docs/handoffs/latest.md
+4. latest file in docs/sessions/ when available
+5. latest file in docs/audits/ when available
+6. relevant canonical docs from the source-of-truth map
+7. relevant ADRs in docs/adr/
 ```
 
-Hard rules:
+Do not recursively fetch every referenced file by default. Follow only the files needed for the current task.
+
+Track paths already read during a session. If a path repeats through references, do not fetch it again unless the task requires confirming latest file contents.
+
+## Write Access
+
+ChatGPT may create and update files directly in the repository when Prince asks for implementation, documentation, planning, cleanup, fixes, or session close work.
+
+Allowed write actions include:
 
 ```text
-No random component-library collage.
-Everything gets normalized into the OpsFlow visual system.
-React Bits components must live behind wrappers in src/components/effects.
-Reusable animations must live in src/components/motion.
-Feature logic must not directly own decorative visual effects.
-```
-
-## Performance Rules
-
-The project should feel instant.
-
-Rules:
-
-```text
-Default to static/cacheable routes.
-Use intent-based prefetching for likely navigation.
-Use Dexie for local-first browser persistence.
-Use fixed dimensions for images, charts, cards, and skeleton states.
-Use virtualization for large lists.
-Use reduced-motion support from the start.
-Lazy-load expensive visual effects.
-One heavy animated background per route max.
-No expensive animated background behind dense tables.
-No service worker until route/data behavior is stable.
-```
-
-Dexie owns:
-
-```text
-recently viewed catalog items
-saved workflow drafts
-saved simulator scenarios
-prefetched catalog detail records
-offline demo data
-local user preferences
-```
-
-## Git Discipline
-
-Core loop:
-
-```text
-Plan -> Implement -> Verify -> Commit -> Log -> Handoff
-```
-
-Commit rule:
-
-```text
-One logical edit = one commit.
-```
-
-Commit style examples:
-
-```text
-docs: add architecture decision record
-chore: initialize next app shell
-style: add design tokens
-feat: add intent link prefetch wrapper
-feat: add hyper catalog data model
-feat: add dexie catalog cache
-test: add catalog filter tests
-docs: log hyper catalog implementation notes
-```
-
-Required local rhythm:
-
-```text
-git status
-git add <specific-file-or-folder>
-git commit -m "<type>: <specific change>"
-git status
-```
-
-Avoid vague commits like:
-
-```text
+create files
 update files
-changes
-fix stuff
-wip
+create documentation
+update documentation
+create source code
+update source code
+create tests
+update tests
+create GitHub issues or PRs when requested
+update handoffs
+update session logs
+update decision logs
+update ADRs when approved
+```
+
+## Delete Access
+
+ChatGPT may delete files only when clearly needed.
+
+Deletion should be limited to:
+
+```text
+obsolete generated files
+incorrect placeholder files
+duplicate documentation
+unused temporary files
+files explicitly approved for removal by Prince
+```
+
+Before deleting meaningful source code, documentation, architecture records, ADRs, or project history, explain the reason and ask for confirmation.
+
+## Project Instructions Sync Rule
+
+`PROJECT_INSTRUCTIONS.md` is the repo-local operating source of truth.
+
+`docs/chatgpt-project-instructions.md` is the compact copy-paste bootstrap for the ChatGPT Project Instructions UI. It should route back to repo docs instead of duplicating every rule.
+
+Whenever project workflow, access rules, session behavior, architecture governance, or repo operating rules change, update `PROJECT_INSTRUCTIONS.md` first.
+
+Also update related repo docs when needed:
+
+```text
+docs/chatgpt-project-instructions.md for ChatGPT UI bootstrap changes
+docs/decision-log.md for minor accepted decisions
+docs/adr/ for architecture decisions
+docs/handoffs/latest.md when the active workflow changes
+CURRENT_CONTEXT.md when live project state changes
 ```
 
 ## Session Start Command
@@ -308,25 +251,7 @@ let's start a session
 
 Perform session startup.
 
-Read, when available:
-
-```text
-1. PROJECT_INSTRUCTIONS.md
-2. CURRENT_CONTEXT.md
-3. docs/handoffs/latest.md
-4. latest file in docs/sessions/
-5. latest file in docs/audits/
-6. docs/architecture.md
-7. docs/scope.md
-8. docs/timeline.md
-9. docs/performance-strategy.md
-10. docs/caching-strategy.md
-11. docs/animation-strategy.md
-12. docs/design-system.md
-13. docs/git-workflow.md
-14. docs/decision-log.md
-15. relevant ADRs in docs/adr/
-```
+Read the startup files in the read order above, respecting the source-of-truth and loop-prevention rules.
 
 Then report a compact startup brief:
 
@@ -336,10 +261,11 @@ Then report a compact startup brief:
 - current target
 - pending tasks
 - open blockers
-- relevant architecture constraints
+- relevant architecture constraints by path reference
 - recommended session focus
-- expected commits for the session
 ```
+
+Do not include expected commits unless Prince asks for implementation planning or the session already has a concrete change target.
 
 Do not start coding automatically unless Prince asks.
 
@@ -363,6 +289,8 @@ Update or prepare updates for:
 5. docs/decision-log.md when decisions were made
 6. docs/adr/ when architecture changes were approved
 7. README.md when public-facing scope changed
+8. CURRENT_CONTEXT.md when live project state changed
+9. docs/chatgpt-project-instructions.md when workflow rules changed
 ```
 
 Close-session output should include:
@@ -381,7 +309,7 @@ Close-session output should include:
 - handoff summary
 ```
 
-If code changed, include the exact Git commands needed to commit any remaining uncommitted work.
+If code changed, include the exact Git commands needed to commit any remaining uncommitted local work.
 
 ## Architecture Decision Rule
 
@@ -431,13 +359,16 @@ break the one-logical-edit-one-commit rule
 skip documentation after meaningful decisions
 overuse React Bits in performance-sensitive areas
 start Workflow Builder before Hyper Catalog MVP is stable
+create duplicate source-of-truth content instead of routing to canonical docs
 ```
 
 Pushback should be direct but useful.
 
 ## Current Official Priority
 
-Priority order:
+The official priority order is owned by `CURRENT_CONTEXT.md` for live state and `docs/timeline.md` for planned timeline.
+
+Current durable priority path:
 
 ```text
 1. Architecture/docs lock
