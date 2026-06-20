@@ -1,4 +1,4 @@
-﻿# Architecture
+# Architecture
 
 OpsFlow Lab uses a frontend-first architecture optimized for speed, motion quality, and portfolio-grade interaction design.
 
@@ -106,18 +106,11 @@ Version 1 uses:
 
 Version 1 does not use a real backend unless an ADR approves it.
 
-## Performance Strategy Summary
+## Performance Strategy
 
-OpsFlow Lab should feel instant through:
+Performance rules are owned by `docs/performance-strategy.md`.
 
-- static/cacheable routes
-- intent-based prefetching
-- stable layout dimensions
-- reduced-motion support
-- virtualized large lists
-- browser-side Dexie caching
-- lazy-loaded expensive visual effects
-- minimal backend dependency
+Architecture implication: default to static or cacheable routes, local-first browser UX, stable layouts, and no backend infrastructure unless it creates visible portfolio value.
 
 ## Architecture Governance
 
