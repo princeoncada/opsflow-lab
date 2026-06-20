@@ -1,4 +1,4 @@
-﻿# Scope
+# Scope
 
 OpsFlow Lab is a public frontend portfolio and engineering case study.
 
@@ -76,17 +76,18 @@ Possible additions:
 
 ## Explicitly Out of Scope for v1
 
-- Supabase auth
-- real users
-- real database persistence
-- Redis cache
-- tRPC API layer
-- AI backend
+Backend and infrastructure deferrals are owned by `docs/architecture.md`.
+
+Cache-specific deferrals are owned by `docs/caching-strategy.md`.
+
+Product features out of scope for v1:
+
 - payments
 - CMS
 - admin panel
 - realtime collaboration
 - multi-user accounts
+- production user management
 
 ## Scope Control Rule
 
