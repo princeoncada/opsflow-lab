@@ -1,4 +1,4 @@
-﻿# Decision Log
+# Decision Log
 
 This file records accepted project decisions that do not require a full ADR.
 
@@ -37,3 +37,11 @@ Decision: Use the Base component library option from shadcn.
 Reason: It keeps the component foundation close to shadcn defaults and avoids premature visual lock-in.
 
 Impact: The visual identity will be built through project tokens, wrappers, React Bits effects, and layout composition.
+
+### 2026-06-20 - Use source-of-truth doc routing
+
+Decision: Use explicit source-of-truth ownership for important project context and route references by repo-relative paths instead of duplicating canonical facts across docs.
+
+Reason: The first documentation pass repeated project identity, stack, deferred stack, timeline, workflow rules, and current state across multiple files, creating drift risk.
+
+Impact: `PROJECT_INSTRUCTIONS.md` owns repo operating rules and the source-of-truth map. `CURRENT_CONTEXT.md` and `docs/handoffs/latest.md` should stay volatile and path-based. Stable strategy docs should not depend on handoffs or current context to be understood.
