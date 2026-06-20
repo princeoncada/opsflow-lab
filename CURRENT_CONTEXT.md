@@ -10,7 +10,7 @@ Architecture and foundation lock.
 
 ## Current Target
 
-Finish documentation governance cleanup, then verify the app locally before starting app shell implementation.
+Verify the app locally, replace the starter README, then begin the app shell foundation.
 
 ## Last Known State
 
@@ -19,15 +19,15 @@ Finish documentation governance cleanup, then verify the app locally before star
 - shadcn/ui has been initialized.
 - Runtime and dev tooling dependencies have been installed.
 - Baseline documentation structure exists.
-- Documentation source-of-truth routing has been introduced in `PROJECT_INSTRUCTIONS.md`.
+- Documentation source-of-truth routing has been introduced and audited in `PROJECT_INSTRUCTIONS.md`.
 - The visible app is still mostly starter Next.js content.
 - `README.md` is still the starter Next.js README.
 
 ## Active Blockers
 
 - Local verification still needs to run through Prince's local environment.
-- App shell foundation should wait until docs governance is stable.
 - Public README still needs to be rewritten before the repo is portfolio-ready.
+- App shell foundation has not started yet.
 
 ## Active References
 
