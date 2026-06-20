@@ -36,6 +36,7 @@ Each important fact should have exactly one canonical owner. When another file n
 
 ```text
 Project operating rules: PROJECT_INSTRUCTIONS.md
+Repo structure: PROJECT_INSTRUCTIONS.md
 Current live state: CURRENT_CONTEXT.md
 Latest handoff: docs/handoffs/latest.md
 Architecture and stack: docs/architecture.md
