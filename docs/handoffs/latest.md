@@ -22,17 +22,18 @@ Live phase owner: `../../CURRENT_CONTEXT.md`
 - Baseline documentation files created.
 - Documentation source-of-truth routing added to `../../PROJECT_INSTRUCTIONS.md`.
 - `../../CURRENT_CONTEXT.md` reduced to a live-state snapshot.
+- Documentation governance audit completed and remaining cleanup targets identified.
 
 ## Current Target
 
-Finish documentation governance cleanup, then verify the app locally before starting app shell implementation.
+Verify the app locally, replace the starter README, then begin the app shell foundation.
 
 ## Pending
 
-- Finish compacting duplicated docs content where needed.
 - Verify app runs locally.
 - Replace starter Next.js README.
-- Begin app provider/layout foundation only after docs governance is stable.
+- Begin app provider/layout foundation.
+- Keep future docs changes routed through canonical owners instead of duplicating project facts.
 
 ## Reference Paths
 
@@ -61,4 +62,4 @@ Do not recursively fetch every referenced path during startup. Read only the fil
 
 ## Next Recommended Session Focus
 
-Run local verification, then start the app shell foundation if checks pass.
+Run local verification, replace the starter README, then start the app shell foundation if checks pass.
