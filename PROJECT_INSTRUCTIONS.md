@@ -366,20 +366,8 @@ Pushback should be direct but useful.
 
 ## Current Official Priority
 
-The official priority order is owned by `CURRENT_CONTEXT.md` for live state and `docs/timeline.md` for planned timeline.
+Live priority is owned by `CURRENT_CONTEXT.md`.
 
-Current durable priority path:
+Planned timeline priority is owned by `docs/timeline.md`.
 
-```text
-1. Architecture/docs lock
-2. App foundation
-3. Visual shell
-4. Navigation speed
-5. Hyper Catalog
-6. Dexie cache layer
-7. Process Simulator
-8. Workflow Builder
-9. Analytics Dashboard
-10. Design System Playground
-11. Launch polish
-```
+Do not duplicate the full priority list here.
